@@ -2,7 +2,7 @@
   "name": "graph-validate-lib",
   "version": "1.0.0",
   "description": "图形验证库",
-  "main": "index.js",
+  "main": "lib/lib.umd.js",
   "scripts": {
     "watch": "rollup -w -c --environment FORMAT:umd",
     "build:umd": "rollup -c --environment FORMAT:umd",

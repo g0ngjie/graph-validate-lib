@@ -18,7 +18,7 @@ const jobs = {
     output: {
       format: 'umd',
       file: resolve(pkg.main),
-      name: 'monky',
+      name: 'lib',
     },
   },
   // build:min - 编译出符合 umd 规范的压缩的可执行文件
@@ -26,7 +26,7 @@ const jobs = {
     output: {
       format: 'umd',
       file: resolve(pkg.main.replace(/(.\w+)$/, '.min$1')),
-      name: 'monky',
+      name: 'lib',
     },
     plugins: [uglify()],
   },
