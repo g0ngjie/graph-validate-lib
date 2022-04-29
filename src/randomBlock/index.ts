@@ -1,17 +1,44 @@
 
+interface IOptions {
+    container: HTMLElement;
+    // 干扰线
+    line?: boolean;
+    // 噪点
+    point?: boolean;
+    // 字体填充
+    fill?: boolean;
+    // 字体大小
+    fontSize?: number;
+    // 字符数量
+    charNum?: number;
+}
 
 export default class RandomBlock {
 
+    onChange: Function
+    private isLine: boolean
+    private isPoint: boolean
+    private isFill: boolean
+    private fontSize: number
+    private charNum: number
+
     constructor(
-        container: HTMLElement
+        options: IOptions,
+        onChange: Function
     ) {
+        this.onChange = onChange
+        this.isLine = options.line as boolean
+        this.isPoint = options.point as boolean
+        this.isFill = options.fill as boolean
+        this.fontSize = options.fontSize as number || 50
+        this.charNum = options.charNum as number || 4
         // 初始化
         // 给到一个div容器
         // 添加canvas
         const canvas = document.createElement('canvas');
-        canvas.width = container.clientWidth;
-        canvas.height = container.clientHeight;
-        container.appendChild(canvas);
+        canvas.width = options.container.clientWidth;
+        canvas.height = options.container.clientHeight;
+        options.container.appendChild(canvas);
         const ctx: CanvasRenderingContext2D | null = canvas.getContext('2d');
         // 点击
         canvas.onclick = () => this.onClick(ctx as CanvasRenderingContext2D, canvas.width, canvas.height)
@@ -48,43 +75,55 @@ export default class RandomBlock {
     private draw(ctx: CanvasRenderingContext2D, width: number, height: number) {
         ctx.strokeStyle = this.randomRgb()
 
-        // 干扰线
-        for (let i = 0; i < 10; i++) {
-            ctx.beginPath()
-            ctx.moveTo(Math.random() * width, Math.random() * height)
-            ctx.lineTo(Math.random() * width, Math.random() * height)
-            ctx.strokeStyle = this.randomRgb()
-            ctx.stroke()
+        if (this.isLine) {
+            // 干扰线
+            for (let i = 0; i < 10; i++) {
+                ctx.beginPath()
+                ctx.moveTo(Math.random() * width, Math.random() * height)
+                ctx.lineTo(Math.random() * width, Math.random() * height)
+                ctx.strokeStyle = this.randomRgb()
+                ctx.stroke()
+            }
         }
 
-        // 干扰散点
-        for (let j = 0; j < 20; j++) {
-            ctx.beginPath()
-            let x = Math.random() * 200;
-            let y = Math.random() * 70;
-            ctx.arc(x, y, 1, 0, Math.PI * 2, true)
-            ctx.fillStyle = this.randomRgb()
-            ctx.fill();
+        if (this.isPoint) {
+            // 干扰散点
+            for (let j = 0; j < 20; j++) {
+                ctx.beginPath()
+                let x = Math.random() * width;
+                let y = Math.random() * height;
+                ctx.arc(x, y, 1, 0, Math.PI * 2, true)
+                ctx.fillStyle = this.randomRgb()
+                ctx.fill();
+            }
         }
 
-        for (let index = 0; index < 4; index++) {
+        let randomStr = '';
+        for (let index = 0; index < this.charNum; index++) {
             ctx.save();
 
-            let x = 10 + index * 20;
-            let y = Math.random() * 20 + 20;
+            let x = width / this.charNum * (index) / 2;
+            let y = Math.random() * height / 4 + height / 4;
 
             ctx.translate(x, y);
 
-            // num = Math.ceil(Math.random() * 9);
             const rds = this.randomChar(1);
-            ctx.strokeStyle = this.randomRgb();
-            ctx.font = "italic 50px 'Microsoft YaHei'";
-            ctx.strokeText(rds, x, y)
-            // ctx.strokeText(num, Math.random() * canvas.width / 2, y)
-            // ctx.fillText(num, x, y)
+            randomStr += rds;
+            ctx.font = `italic ${this.fontSize}px 'Microsoft YaHei'`;
+
+            if (this.isFill) {
+                ctx.fillStyle = this.randomRgb()
+                ctx.fillText(rds, x, y)
+            }
+            else {
+                ctx.strokeStyle = this.randomRgb();
+                ctx.strokeText(rds, x, y)
+            }
 
             ctx.restore();
         }
+
+        this.onChange(randomStr)
     }
 
 }

@@ -26,15 +26,24 @@
 </head>
 
 <body>
-    <div id="block" style="width: 200px; height: 70px;"></div>
+    <div id="block" style="width: 400px; height: 70px;"></div>
 </body>
 <!-- <script type="module">
     import lib from "../../lib/lib.module.js";
     new lib.randomBlock(document.getElementById('block'))
 </script> -->
-<script src="../../lib/lib.umd.min.js"></script>
+<script src="../../lib/lib.umd.js"></script>
 <script>
-    new lib.randomBlock(document.getElementById('block'))
+    new lib.randomBlock({
+        container: document.getElementById('block'),
+        line: true,
+        point: true,
+        // fill: true,
+        fontSize: 50,
+        charNum: 5,
+    }, function (str) {
+        console.log("[debug]str:", str)
+    })
 </script>
 
 </html>
