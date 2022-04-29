@@ -8,6 +8,7 @@
     ],
     "removeComments": false,
     "declaration": true,
+    "declarationDir": "types",
     "sourceMap": true,
     /* 强类型检查配置 */
     "strict": true,
