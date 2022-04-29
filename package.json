@@ -4,6 +4,7 @@
   "description": "图形验证库",
   "main": "lib/lib.umd.js",
   "module": "lib/lib.module.js",
+  "typings": "lib/index.d.ts",
   "scripts": {
     "watch": "rollup -w -c --environment FORMAT:umd",
     "build:umd": "rollup -c --environment FORMAT:umd",
@@ -15,6 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/g0ngjie/graph-validate-lib.git"
   },
+  "files": ["lib"],
   "keywords": [
     "graph-validate-lib",
     "validate",
