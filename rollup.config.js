@@ -1,11 +1,11 @@
 const path = require('path');
-const babel = require('rollup-plugin-babel');
 const nodeResolve = require('@rollup/plugin-node-resolve').default;
 const uglify = require('rollup-plugin-uglify').uglify;
 const merge = require('lodash.merge');
 const pkg = require('./package.json');
+const rollupTypescript = require('rollup-plugin-typescript2');
 
-const extensions = ['.js'];
+const extensions = ['.ts'];
 
 const resolve = function (...args) {
   return path.resolve(__dirname, ...args);
@@ -30,24 +30,34 @@ const jobs = {
     },
     plugins: [uglify()],
   },
+  esm: {
+    output: {
+      format: 'esm',
+      file: resolve(pkg.module),
+      name: 'lib',
+    }
+  },
 };
+
+// ts
+const tsPlugin = rollupTypescript({
+  tsconfig: resolve('./tsconfig.json'), // 导入本地ts配置
+  extensions
+})
 
 // 从环境变量获取打包特征
 const mergeConfig = jobs[process.env.FORMAT || 'esm'];
 
 module.exports = merge(
   {
-    input: resolve('./src/index.js'),
+    input: resolve('./src/index.ts'),
     output: {},
     plugins: [
       nodeResolve({
         extensions,
         modulesOnly: true,
       }),
-      babel({
-        exclude: 'node_modules/**',
-        extensions,
-      }),
+      tsPlugin,
     ],
   },
   mergeConfig,
