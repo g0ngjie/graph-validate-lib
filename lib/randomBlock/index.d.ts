@@ -5,15 +5,17 @@ interface IOptions {
     fill?: boolean;
     fontSize?: number;
     charNum?: number;
+    factor?: string;
 }
 export default class RandomBlock {
-    onChange: Function;
+    callback: Function;
     private isLine;
     private isPoint;
     private isFill;
     private fontSize;
     private charNum;
-    constructor(options: IOptions, onChange: Function);
+    private factorStr;
+    constructor(options: IOptions, callback: Function);
     private onClick;
     private randomRgb;
     private randomChar;

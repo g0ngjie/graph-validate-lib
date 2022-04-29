@@ -11,27 +11,31 @@ interface IOptions {
     fontSize?: number;
     // 字符数量
     charNum?: number;
+    // 随机因子
+    factor?: string;
 }
 
 export default class RandomBlock {
 
-    onChange: Function
+    callback: Function
     private isLine: boolean
     private isPoint: boolean
     private isFill: boolean
     private fontSize: number
     private charNum: number
+    private factorStr: string
 
     constructor(
         options: IOptions,
-        onChange: Function
+        callback: Function
     ) {
-        this.onChange = onChange
+        this.callback = callback
         this.isLine = options.line as boolean
         this.isPoint = options.point as boolean
         this.isFill = options.fill as boolean
         this.fontSize = options.fontSize as number || 50
         this.charNum = options.charNum as number || 4
+        this.factorStr = options.factor as string || 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
         // 初始化
         // 给到一个div容器
         // 添加canvas
@@ -63,10 +67,9 @@ export default class RandomBlock {
 
     // 随机字符
     private randomChar(len: number = 4) {
-        let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         let result = '';
         for (let i = 0; i < len; i++) {
-            result += str[Math.floor(Math.random() * str.length)];
+            result += this.factorStr[Math.floor(Math.random() * this.factorStr.length)];
         }
         return result;
     }
@@ -123,7 +126,7 @@ export default class RandomBlock {
             ctx.restore();
         }
 
-        this.onChange(randomStr)
+        this.callback(randomStr)
     }
 
 }
