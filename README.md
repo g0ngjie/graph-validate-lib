@@ -33,3 +33,22 @@ new randomBlock(
 | charNum   | 随机字符数量               | 4                                                              |
 | factor    | 随机因子                   | ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 |
 | callback  | 回调函数，返回当前随机字符 | -                                                              |
+
+## slider
+
+> 滑块验证
+
+```js
+new lib.slider(
+  { container, title: "sliding unlock", success: "unlock" },
+  (res) => {
+    console.log("[debug]res:", res);
+  }
+);
+```
+
+| 参数      | 说明         | 默认值   |
+| --------- | ------------ | -------- |
+| container | DOM 节点     | -        |
+| title     | 默认展示文案 | 滑动解锁 |
+| success   | 成功文案     | 解锁成功 |

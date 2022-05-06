@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container" style="width: 200px; height: 30px;border: 1px solid #999;"></div>
+</body>
+<script src="../lib/lib.umd.js"></script>
+<script>
+    var container = document.getElementById('container');
+    new lib.slider({ container, title: "sliding unlock", success: "unlock" }, (res) => {
+        console.log("[debug]res:", res)
+    })
+</script>
+
+</html>
