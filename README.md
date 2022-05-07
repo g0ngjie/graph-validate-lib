@@ -89,7 +89,7 @@ new lib.TextClick(
 
 ## RandomCalc
 
-> 随机字符串验证
+> 计算验证
 
 ```js
 new lib.RandomCalc(
