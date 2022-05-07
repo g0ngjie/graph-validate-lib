@@ -86,3 +86,28 @@ new lib.TextClick(
 | checkNum  | 校验数量      | 3          |
 | accuracy  | 精度          | 15         |
 | images    | 图片 URL 列表 | []         |
+
+## RandomCalc
+
+> 随机字符串验证
+
+```js
+new lib.RandomCalc(
+  {
+    container: document.getElementById("app"),
+    width: 320,
+    height: 60,
+  },
+  function (res) {
+    console.log("[debug]res:", res);
+  }
+);
+```
+
+| 参数      | 说明       | 默认值     |
+| --------- | ---------- | ---------- |
+| container | DOM 节点   | -          |
+| width     | 宽度       | 320        |
+| height    | 高度       | 60         |
+| range     | 数值区间   | 100        |
+| operator  | 运算符列表 | ["+", "-"] |
