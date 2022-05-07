@@ -1,4 +1,4 @@
-export declare const verifyContainerCss = "margin: 20px auto;\n    position: relative;\n    overflow: hidden;\n    user-select:none;";
+export declare const verifyContainerCss = "position: relative;\n    overflow: hidden;\n    user-select:none;";
 export declare const picCss = "position: relative;";
 export declare const canvasCss = "display: block;";
 export declare const pointerCss = "background: #1abd6c;\n    border-radius: 50%;\n    padding: 10px;\n    position: absolute;";

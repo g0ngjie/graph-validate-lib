@@ -1,7 +1,6 @@
 
 export const verifyContainerCss =
-    `margin: 20px auto;
-    position: relative;
+    `position: relative;
     overflow: hidden;
     user-select:none;`
 export const picCss =
