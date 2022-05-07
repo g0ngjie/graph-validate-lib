@@ -1,7 +1,7 @@
 {
   "name": "graph-validate-lib",
   "version": "1.0.7",
-  "description": "图形验证库，提供随机字符、滑块、文字点选、数字计算、滑动图片等验证功能的图形化UI库",
+  "description": "图形验证库",
   "main": "lib/lib.umd.js",
   "module": "lib/lib.module.js",
   "typings": "lib/index.d.ts",

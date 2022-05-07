@@ -1,6 +1,7 @@
 # graph-validate-lib
 
 图形验证库
+提供随机字符、滑块、文字点选、数字计算、滑动图片等验证功能的图形化 UI 库
 
 ## randomBlock
 
@@ -23,16 +24,16 @@ new randomBlock(
 );
 ```
 
-| 参数      | 说明                       | 默认值                                                         |
-| --------- | -------------------------- | -------------------------------------------------------------- |
-| container | DOM 节点                   | -                                                              |
-| line      | 干扰线                     | false                                                          |
-| point     | 噪点                       | false                                                          |
-| fill      | 字体填充                   | false                                                          |
-| fontSize  | 字体大小                   | 50                                                             |
-| charNum   | 随机字符数量               | 4                                                              |
-| factor    | 随机因子                   | ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 |
-| callback  | 回调函数，返回当前随机字符 | -                                                              |
+| 参数      | 说明                       | 默认值          |
+| --------- | -------------------------- | --------------- |
+| container | DOM 节点                   | -               |
+| line      | 干扰线                     | false           |
+| point     | 噪点                       | false           |
+| fill      | 字体填充                   | false           |
+| fontSize  | 字体大小                   | 50              |
+| charNum   | 随机字符数量               | 4               |
+| factor    | 随机因子                   | ABCDEFGHIJKL... |
+| callback  | 回调函数，返回当前随机字符 | -               |
 
 ## Slider
 
