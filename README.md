@@ -111,3 +111,34 @@ new lib.RandomCalc(
 | height    | 高度       | 60         |
 | range     | 数值区间   | 100        |
 | operator  | 运算符列表 | ["+", "-"] |
+
+## SliderImg
+
+> 滑动图片验证
+
+```js
+new lib.SliderImg(
+  {
+    container: document.getElementById("app"),
+    width: 320,
+    height: 160,
+    images: [
+      "https://th.bing.com/th/id/OIP.2gS4UgpMqzgMv_WcelDaZwAAAA?pid=ImgDet&rs=1",
+      "https://th.bing.com/th/id/OIP.W3ZzYPC0KT8ijxyc-1wpGAAAAA?pid=ImgDet&rs=1",
+      "https://th.bing.com/th/id/R.0233d6fa7a283ac2cc9adbbce09b2150?rik=mAI8iultzrL3OQ&pid=ImgRaw&r=0&sres=1&sresct=1",
+    ],
+  },
+  function (res) {
+    console.log("[debug]res:", res);
+  }
+);
+```
+
+| 参数      | 说明           | 默认值 |
+| --------- | -------------- | ------ |
+| container | DOM 节点       | -      |
+| width     | 宽度           | 320    |
+| height    | 高度           | 160    |
+| cuttingWH | 裁剪图片的宽高 | 40     |
+| accuracy  | 精度           | 5      |
+| images    | 图片 URL 列表  | []     |

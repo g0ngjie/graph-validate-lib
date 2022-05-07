@@ -1,0 +1,15 @@
+export declare const verifyContainerCss = "position: relative;\n    overflow: hidden;\n    user-select:none;";
+export declare const picCss = "width: 100%;position: relative;";
+export declare const canvasImgCss = "display: block;";
+export declare const canvasBlockCss = "position: absolute;\n    left: 0;\n    top: 0;";
+export declare const sliderCss = "height: 40px;\n    border: 1px solid #e4e4e4;\n    background: #f7f7f7;\n    font-family: \"\u5B8B\u4F53\";\n    position: relative;";
+export declare const tipCss = "width: 100%;\n    height: 100%;\n    color: #666;\n    font-size: 14px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    position: absolute;";
+export declare const barCss = "height: 100%;\n    position: absolute;\n    left: 0;\n    top: 0;";
+export declare const activeCss = "background: #D1E9FE;\n    border: 1px solid #1991FA;";
+export declare const successCss = "background: #D2F4EF;\n    border: 1px solid #52CCBA;";
+export declare const failCss = "background: #fce1e1;\n    border: 1px solid #f57a7a;";
+export declare const sliderIconCss = "width: 40px;\n    height: 100%;\n    background: rgba(225, 225, 225, 0.6);\n    border: 1px solid #e3e3e3;\n    color: #666;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    position: absolute;\n    left: 0;\n    top: 0;\n    cursor: pointer;";
+export declare const sliderIconSuccessCss = "color: #fff;\n    background: #52CCBA;\n    border: 1px solid #52CCBA;";
+export declare const sliderIconActiveCss = "color: #fff;\n    background: #1991FA;\n    border: 1px solid #1991FA;";
+export declare const sliderIconFailCss = "color: #fff;\n    background: #f57a7a;\n    border: 1px solid #f57a7a;";
+export declare const refreshCss = "display: flex;\n    position: absolute;\n    right: 10px;\n    top: 10px;\n    z-index: 2;\n    cursor: pointer;";
