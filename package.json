@@ -1,6 +1,6 @@
 {
   "name": "graph-validate-lib",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "图形验证库",
   "main": "lib/lib.umd.js",
   "module": "lib/lib.module.js",
