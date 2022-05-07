@@ -1,0 +1,10 @@
+export declare const verifyContainerCss = "margin: 20px auto;\n    position: relative;\n    overflow: hidden;\n    user-select:none;";
+export declare const picCss = "position: relative;";
+export declare const canvasCss = "display: block;";
+export declare const pointerCss = "background: #1abd6c;\n    border-radius: 50%;\n    padding: 10px;\n    position: absolute;";
+export declare const pointerICss = "color: #fff;\n    font-style: normal;\n    font-size: 12px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    position: absolute;\n    left: 0;\n    top: 0;\n    right: 0;\n    bottom: 0;";
+export declare const toolbarCss = "width: 100%;\n    height: 40px;\n    border: 1px solid #e4e4e4;\n    background: #f7f7f7;\n    color: #666;\n    font-size: 14px;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    position: relative;";
+export declare const toolbarActiveCss = "color: #fff;\n    background: #1991FA;\n    border: 1px solid #1991FA;";
+export declare const toolbarSuccessCss = "color: #fff;\n    background: #52CCBA;\n    border: 1px solid #52CCBA;";
+export declare const toolbarFailCss = "color: #fff;\n    background: #f57a7a;\n    border: 1px solid #f57a7a;";
+export declare const refreshCss = "display: flex;\n    position: absolute;\n    right: 10px;\n    top: 10px;\n    z-index: 2;\n    cursor: pointer;";

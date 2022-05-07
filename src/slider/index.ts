@@ -49,9 +49,9 @@ interface IOptions {
 
 export default class Slider {
 
-    callback: Function
+    callback: (result: boolean) => void
 
-    constructor(options: IOptions, callback: Function) {
+    constructor(options: IOptions, callback: (result: boolean) => void) {
         this.callback = callback
         // 初始化
         if (!options.title) {

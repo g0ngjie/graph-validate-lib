@@ -17,7 +17,7 @@ interface IOptions {
 
 export default class RandomBlock {
 
-    callback: Function
+    callback: (randomStr: string) => void
     private isLine: boolean
     private isPoint: boolean
     private isFill: boolean
@@ -27,7 +27,7 @@ export default class RandomBlock {
 
     constructor(
         options: IOptions,
-        callback: Function
+        callback: (randomStr: string) => void
     ) {
         this.callback = callback
         this.isLine = options.line as boolean

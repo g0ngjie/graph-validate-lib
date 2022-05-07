@@ -1,7 +1,9 @@
-import randomBlock from "./randomBlock";
-import slider from "./slider";
+import RandomBlock from "./randomBlock";
+import Slider from "./slider";
+import TextClick from "./textClick";
 declare const _default: {
-    randomBlock: typeof randomBlock;
-    slider: typeof slider;
+    RandomBlock: typeof RandomBlock;
+    Slider: typeof Slider;
+    TextClick: typeof TextClick;
 };
 export default _default;

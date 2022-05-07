@@ -1,7 +1,9 @@
-import randomBlock from "./randomBlock";
-import slider from "./slider";
+import RandomBlock from "./randomBlock";
+import Slider from "./slider";
+import TextClick from "./textClick";
 
 export default {
-    randomBlock,
-    slider
+    RandomBlock,
+    Slider,
+    TextClick
 }

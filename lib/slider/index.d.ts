@@ -4,8 +4,8 @@ interface IOptions {
     title?: string;
 }
 export default class Slider {
-    callback: Function;
-    constructor(options: IOptions, callback: Function);
+    callback: (result: boolean) => void;
+    constructor(options: IOptions, callback: (result: boolean) => void);
     getMaterials(title: string): {
         container: HTMLDivElement;
         slider: HTMLDivElement;

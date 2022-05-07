@@ -8,14 +8,14 @@ interface IOptions {
     factor?: string;
 }
 export default class RandomBlock {
-    callback: Function;
+    callback: (randomStr: string) => void;
     private isLine;
     private isPoint;
     private isFill;
     private fontSize;
     private charNum;
     private factorStr;
-    constructor(options: IOptions, callback: Function);
+    constructor(options: IOptions, callback: (randomStr: string) => void);
     private onClick;
     private randomRgb;
     private randomChar;
